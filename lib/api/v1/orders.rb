@@ -51,7 +51,7 @@ module API
             status 201
             @order = Order.includes(:order_items).where(:id => order.id).first
           else
-            error!({ error: 'Invalid params', details: "#{@order.errors.full_messages.join(' ,')}" }, 400)
+            error!({ error: 'Invalid params', details: "#{order.errors.full_messages.join(' ,')}" }, 400)
           end
         end
       end
